@@ -5,19 +5,18 @@
 	<!-- Meta Tag -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name='copyright' content='pavilan'>
+	<meta name='copyright' content='algoders'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title Tag  -->
-	<title>Algoders</title>
+	<title>Algoders | We Build Your Ideas</title>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/favicon.png" href="img/favicon.png">
 
 	<!-- Web Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
@@ -31,30 +30,41 @@
 	<link rel="stylesheet" href="css/magnific-popup.min.css">
 	<link rel="stylesheet" href="css/owl-carousel.min.css">
 	<link rel="stylesheet" href="css/slicknav.min.css">
-
-
-
-	<!-- Bizwheel Stylesheet -->
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="css/responsive.css">
-
-	<!-- Bizwheel Colors -->
-	<!--<link rel="stylesheet" href="css/skins/skin-1.css">
-		<!--<link rel="stylesheet" href="css/skins/skin-2.css">-->
-	<!--<link rel="stylesheet" href="css/skins/skin-3.css">-->
-	<!--<link rel="stylesheet" href="css/skins/skin-4.css">-->
-
-	<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
 	<style>
 		* {
 			scroll-behavior: smooth;
 		}
 	</style>
 </head>
+<?php
+if (isset($_POST['submit'])) {
+	extract($_POST);
+	$to = 'info@algoders.com';
+	$subject = "New Query";
+	$from = $email;
+
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+	// Create email headers
+	$headers .= 'From: ' . $from . "\r\n" .
+		'Reply-To: ' . $from . "\r\n" .
+		'X-Mailer: PHP/' . phpversion();
+	$message = "
+			Hi, there's a new query from " . $first_name . " " . $last_name . ", Email: " . $email . ", Phone: " . $phone . ", Message: " . $messageBox . "
+		";
+	$txt = $message;
+	$response = mail($to, $subject, $txt, $headers);
+	if ($response) {
+		echo "<script>alert('Your query has been submitted, we will get back to you shortly.')</script>";
+	} else {
+		echo "<script>alert('Opps! your query has not been reached to us yet, please feel free to call us: +919435333519')</script>";
+	}
+}
+?>
 
 <body id="bg">
 
@@ -113,8 +123,7 @@
 										<!-- Logo -->
 										<div class="logo">
 											<!-- Image Logo -->
-											<div class="img-logo"
-												style="border: 0px solid black; margin-top: 30px; width: 300px;">
+											<div class="img-logo" style="border: 0px solid black; margin-top: 30px; width: 300px;">
 												<a href="index.html">
 													<!-- <img style="border: 1px solid black;"
 														src="img/general_developers_logo.png" alt="#"> -->
@@ -463,18 +472,6 @@
 		</section>
 		<!--/ End Services -->
 
-		<!-- Portfolio -->
-
-		<!--/ End Portfolio -->
-
-		<!-- Testimonials -->
-
-		<!--/ End Testimonials -->
-
-		<!-- Latest Blog -->
-
-		<!--/ End Latest Blog -->
-
 		<!-- Contact Us -->
 		<section id="contact" class="contact-us section-space">
 			<div class="container">
@@ -483,41 +480,41 @@
 						<!-- Contact Form -->
 						<div class="contact-form-area m-top-30">
 							<h4>Get In Touch</h4>
-							<form class="form" method="post" action="mail/mail.php">
+							<form class="form" method="post" action="">
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<div class="form-group">
 											<div class="icon"><i class="fa fa-user"></i></div>
-											<input type="text" name="first_name" placeholder="First Name">
+											<input type="text" name="first_name" placeholder="First Name" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<div class="form-group">
 											<div class="icon"><i class="fa fa-user"></i></div>
-											<input type="text" name="last_name" placeholder="Last Name">
+											<input type="text" name="last_name" placeholder="Last Name" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<div class="form-group">
 											<div class="icon"><i class="fa fa-envelope"></i></div>
-											<input type="email" name="email" placeholder="Type Subjects">
+											<input type="email" name="email" placeholder="Enter your email" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<div class="form-group">
-											<div class="icon"><i class="fa fa-tag"></i></div>
-											<input type="text" name="subject" placeholder="Type Subjects">
+											<div class="icon"><i class="fa fa-phone"></i></div>
+											<input type="text" pattern="[6789]{1}[0-9]{9}" name="phone" placeholder="Phone">
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="form-group textarea">
 											<div class="icon"><i class="fa fa-pencil"></i></div>
-											<textarea type="textarea" name="message" rows="5"></textarea>
+											<textarea type="textarea" name="messageBox" rows="5"></textarea>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="form-group button">
-											<button type="submit" class="bizwheel-btn theme-2">Send Now</button>
+											<button type="submit" name="submit" class="bizwheel-btn theme-2">Send Now</button>
 										</div>
 									</div>
 								</div>
@@ -632,8 +629,7 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
 							<!-- Footer About -->
-							<div class="single-widget footer-about widget"
-								style="border: 0px solid white; margin-top: 35px;">
+							<div class="single-widget footer-about widget" style="border: 0px solid white; margin-top: 35px;">
 								<div class="" style="border: 0px solid white;">
 									<!-- <div class="img-logo">
 										<a class="logo" href="index.html">
@@ -651,16 +647,11 @@
 								<div class="social">
 									<!-- Social Icons -->
 									<ul class="social-icons">
-										<li><a class="facebook" href="#" target="_blank"><i
-													class="fa fa-facebook"></i></a></li>
-										<li><a class="twitter" href="#" target="_blank"><i
-													class="fa fa-twitter"></i></a></li>
-										<li><a class="linkedin" href="#" target="_blank"><i
-													class="fa fa-linkedin"></i></a></li>
-										<li><a class="pinterest" href="#" target="_blank"><i
-													class="fa fa-pinterest-p"></i></a></li>
-										<li><a class="instagram" href="#" target="_blank"><i
-													class="fa fa-instagram"></i></a></li>
+										<li><a class="facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a class="linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+										<li><a class="pinterest" href="#" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
+										<li><a class="instagram" href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
 									</ul>
 								</div>
 								<!-- <div class="button"><a href="#" class="bizwheel-btn">About Us</a></div> -->
@@ -687,8 +678,7 @@
 								<h3 class="widget-title">Blog Page</h3>
 								<!-- Single News -->
 								<div class="single-f-news">
-									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70"
-												alt="#"></a></div>
+									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
 									<div class="content">
 										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April
 												15, 2020</time></p>
@@ -699,8 +689,7 @@
 								<!--/ End Single News -->
 								<!-- Single News -->
 								<div class="single-f-news">
-									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70"
-												alt="#"></a></div>
+									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
 									<div class="content">
 										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April
 												10, 2020</time></p>
@@ -749,8 +738,7 @@
 						<div class="col-12">
 							<div class="copyright-content">
 								<!-- Copyright Text -->
-								<p>© Copyright <a href="#">Algoders</a>. Design &amp; Development By <a target="_blank"
-										href="#">Algoders</a></p>
+								<p>© Copyright <a href="#">Algoders</a>. Design &amp; Development By <a target="_blank" href="#">Algoders</a></p>
 							</div>
 						</div>
 					</div>
