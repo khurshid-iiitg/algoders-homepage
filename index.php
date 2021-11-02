@@ -767,7 +767,7 @@ if (isset($_POST['submit'])) {
 		<!-- Slick Nav JS -->
 		<script defer src="js/slicknav.min.js"></script>
 		<!-- Slick Slider JS -->
-		<script defer src="js/owl-carousel.min.js"></script>
+		<script async src="js/owl-carousel.min.js"></script>
 		<!-- Easing JS -->
 		<script defer src="js/easing.js"></script>
 		<!-- Magnipic Popup JS -->
