@@ -567,58 +567,7 @@ if (isset($_POST['submit'])) {
 		<!--/ End Contact Us -->
 
 		<!-- Client Area -->
-		<div class="clients section-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="partner-slider">
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-1.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-2.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-3.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-4.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-5.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-							<!-- Single client -->
-							<div class="single-slider">
-								<div class="single-client">
-									<a href="#" target="_blank"><img src="img/client/client-6.png" alt="#"></a>
-								</div>
-							</div>
-							<!--/ End Single client -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<!--/ End Client Area -->
 
 		<!-- Footer -->
@@ -748,32 +697,32 @@ if (isset($_POST['submit'])) {
 		</footer>
 
 		<!-- Jquery JS -->
-		<script defer src="js/jquery.min.js"></script>
-		<script defer src="js/jquery-migrate-3.0.0.js"></script>
+		<script  src="js/jquery.min.js"></script>
+		<script  src="js/jquery-migrate-3.0.0.js"></script>
 		<!-- Popper JS -->
-		<script defer src="js/popper.min.js"></script>
+		<script  src="js/popper.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script defer src="js/bootstrap.min.js"></script>
 		<!-- Modernizr JS -->
-		<script defer src="js/modernizr.min.js"></script>
+		<script  src="js/modernizr.min.js"></script>
 		<!-- ScrollUp JS -->
-		<script defer src="js/scrollup.js"></script>
+		<script  src="js/scrollup.js"></script>
 		<!-- FacnyBox JS -->
-		<script defer src="js/jquery-fancybox.min.js"></script>
+		<script  src="js/jquery-fancybox.min.js"></script>
 		<!-- Cube Portfolio JS -->
-		<script defer src="js/cubeportfolio.min.js"></script>
+		<script  src="js/cubeportfolio.min.js"></script>
 		<!-- Slick Nav JS -->
-		<script defer src="js/slicknav.min.js"></script>
+		<script  src="js/slicknav.min.js"></script>
 		<!-- Slick Nav JS -->
-		<script defer src="js/slicknav.min.js"></script>
+		<script  src="js/slicknav.min.js"></script>
 		<!-- Slick Slider JS -->
-		<script async src="js/owl-carousel.min.js"></script>
+		<!-- <script async src="js/owl-carousel.min.js"></script> -->
 		<!-- Easing JS -->
-		<script defer src="js/easing.js"></script>
+		<script  src="js/easing.js"></script>
 		<!-- Magnipic Popup JS -->
-		<script defer src="js/magnific-popup.min.js"></script>
+		<script  src="js/magnific-popup.min.js"></script>
 		<!-- Active JS -->
-		<script defer src="js/active.js"></script>
+		<script  src="js/active.js"></script>
 </body>
 
 </html>
